@@ -1,8 +1,8 @@
 {
-  "name": "pinwheel-tailwind",
+  "name": "ds.studio",
   "version": "1.0.0",
-  "description": "pinwheel-tailwind is a free and open-source Tailwind CSS template for building modern landing pages.",
-  "author": "themefisher",
+  "description": "Ds.Studio is a wedding studio that brings creative and innovative expertise to capture your special moments with an elegant and beautiful touch.",
+  "author": "Adhfry",
   "license": "MIT",
   "scripts": {
     "dev": "gulp dev",
