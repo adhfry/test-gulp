@@ -73,7 +73,7 @@
         <h6>Quick Links</h6>
         <ul>
           <li>
-            <a href="about.html">About</a>
+            <a href="#">About</a>
           </li>
           <li>
             <a href="#">Category</a>
@@ -82,7 +82,7 @@
             <a href="#">Testimonial</a>
           </li>
           <li>
-            <a href="contact.html">Contact</a>
+            <a href="#">Contact</a>
           </li>
         </ul>
       </div>
@@ -129,6 +129,14 @@
   console.log("Pathname saat ini:", currentPathname);
 
   document.addEventListener("DOMContentLoaded", function () {
+    // hidupkan untuk publish dalam keadaan dev
+    var currentPath = window.location.pathname;
+
+    if (currentPath !== "/" && currentPath !== "/index.html") {
+      // Mengarahkan pengguna ke halaman utama
+      window.location.href = "/"; // Atau "/index.html"
+    }
+
     var homeNav = document.getElementById("home-nav");
     var aboutNav = document.getElementById("about-nav");
     var featuresNav = document.getElementById("features-nav");
