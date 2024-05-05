@@ -28,6 +28,7 @@ module.exports = {
     "./src/pages/**/*.html",
     "./src/partials/**/*.html",
     "./src/scripts/**/*.js",
+    "./node_modules/flowbite/**/*.js",
   ],
   safelist: [{ pattern: /^swiper-/ }],
   theme: {
@@ -73,6 +74,7 @@ module.exports = {
     },
   },
   plugins: [
+    require("flowbite/plugin"),
     require("@tailwindcss/typography"),
     require("@tailwindcss/forms"),
     require("tailwind-bootstrap-grid")({

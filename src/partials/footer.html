@@ -3,34 +3,23 @@
     <div class="row gx-5 pb-10 pt-[52px]">
       <div class="col-12 mt-12 md:col-6 lg:col-3">
         <a href="index.html">
-          <img src="images/logo.svg" alt="" />
+          <img src="images/ds-logo.png" width="200rem" alt="" />
         </a>
         <p class="mt-6">
-          Lorem ipsum dolor sit sed dmi amet, consectetur adipiscing. Cdo
-          tellus, sed condimentum volutpat.
+          Menciptakan video dan foto dengan sepenuh hati agar perjalanan Anda
+          menjadi kenangan yang indah.
         </p>
       </div>
       <div class="col-12 mt-12 md:col-6 lg:col-3">
         <h6>Socials</h6>
-        <p>themefisher@gmail.com</p>
+        <p>ds.studio@gmail.com</p>
         <ul class="social-icons mt-4 lg:mt-6">
           <li>
-            <a href="#">
-              <svg
-                width="19"
-                height="21"
-                viewBox="0 0 20 21"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M19.1056 10.4495C19.1056 5.09642 15 0.759277 9.9327 0.759277C4.86539 0.759277 0.759766 5.09642 0.759766 10.4495C0.759766 15.2946 4.08865 19.3191 8.49018 20.0224V13.2627H6.15996V10.4495H8.49018V8.33951C8.49018 5.91696 9.85872 4.54939 11.93 4.54939C12.9657 4.54939 14.0013 4.74476 14.0013 4.74476V7.12823H12.8547C11.7081 7.12823 11.3382 7.87063 11.3382 8.65209V10.4495H13.8904L13.4835 13.2627H11.3382V20.0224C15.7398 19.3191 19.1056 15.2946 19.1056 10.4495Z"
-                  fill="#222222"
-                />
-              </svg>
+            <a href="https://www.instagram.com/ds.studio_126/">
+              <img src="images/icons/instagram.svg" class="w-7" alt="" />
             </a>
           </li>
-          <li>
+          <!-- <li>
             <a href="#">
               <svg
                 width="19"
@@ -77,7 +66,7 @@
                 />
               </svg>
             </a>
-          </li>
+          </li> -->
         </ul>
       </div>
       <div class="col-12 mt-12 md:col-6 lg:col-3">
@@ -99,8 +88,13 @@
       </div>
       <div class="col-12 mt-12 md:col-6 lg:col-3">
         <h6>Location & Contact</h6>
-        <p>2118 Thornridge Cir. Syracuse, Connecticut 35624</p>
-        <p>(704) 555-0127</p>
+        <p>
+          <a href="https://maps.app.goo.gl/j4JrzKAqi1TBPbHj9"
+            >Jl. Pujangga No.23, Pujangga, Kepanjin, Kec. Kota Sumenep,
+            Kabupaten Sumenep, Jawa Timur 69415</a
+          >
+        </p>
+        <p>+62 123-4567-8910</p>
       </div>
     </div>
   </div>
@@ -108,16 +102,53 @@
     <div
       class="footer-copyright mx-auto border-t border-border pb-10 pt-7 text-center"
     >
-      <p>Designed And Developed by <a href="https://themefisher.com" target="_blank">Themefisher</a></p>
+      <p>
+        Copyright © Ds.Studio All Rights Reserved.
+        <a href="https://adhfry.vercel.app" target="_blank"
+          ><br />Made with 💟 by Adhfry</a
+        >
+      </p>
     </div>
   </div>
 </footer>
+<!-- Flowbite -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 
 <!-- jQuery -->
 <!-- <script src="plugins/jquery/jquery.min.js"></script> -->
 <!-- Swiper JS -->
 <script src="plugins/swiper/swiper-bundle.js"></script>
 <script src="plugins/shufflejs/shuffle.js"></script>
+<script src="../path/to/flowbite/dist/flowbite.min.js"></script>
 
 <!-- Main Script -->
 <script src="scripts/main.js"></script>
+<!-- My Script -->
+<script>
+  const currentPathname = window.location.pathname;
+  console.log("Pathname saat ini:", currentPathname);
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var homeNav = document.getElementById("home-nav");
+    var aboutNav = document.getElementById("about-nav");
+    var featuresNav = document.getElementById("features-nav");
+    var howNav = document.getElementById("how-nav");
+    var contactNav = document.getElementById("contact-nav");
+
+    if (window.location.pathname === "/") {
+      // Tambahkan kelas 'active' jika path adalah '/'
+      homeNav.classList.add("active");
+    } else if (window.location.pathname === "/about.html") {
+      aboutNav.classList.add("active");
+    } else if (window.location.pathname === "/features.html") {
+      featuresNav.classList.add("active");
+    } else if (window.location.pathname === "/how-it-works.html") {
+      howNav.classList.add("active");
+    } else if (window.location.pathname === "/contact.html") {
+      contactNav.classList.add("active");
+    } else {
+      // Hapus kelas 'active' jika path bukan '/'
+      homeNav.classList.remove("active");
+    }
+  });
+</script>

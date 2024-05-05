@@ -14,10 +14,7 @@ const comments = require("gulp-header-comment");
 const template = require("gulp-template");
 const theme = require("./src/theme.json");
 const node_env = process.argv.slice(2)[0];
-const headerComments = `WEBSITE: https://themefisher.com
-                        TWITTER: https://twitter.com/themefisher
-                        FACEBOOK: https://facebook.com/themefisher
-                        GITHUB: https://github.com/themefisher/`;
+const headerComments = `Created by @adhfry`;
 
 var path = {
   // source paths
@@ -44,7 +41,7 @@ gulp.task("pages", function () {
     .pipe(
       wrapper({
         header:
-          "<!DOCTYPE html>\n<html lang=\"zxx\">\n@@include('head.html')\n@@include('header.html')\n<body>",
+          "<!DOCTYPE html>\n<html lang=\"en\">\n@@include('head.html')\n@@include('header.html')\n<body>",
         footer:
           node_env === "dev"
             ? "@@include('components/tw-size-indicator.html')\n @@include('footer.html')\n</body>\n</html>"
