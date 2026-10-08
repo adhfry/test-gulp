@@ -478,10 +478,33 @@
 }
 
 .footer-bottom {
-  @apply flex flex-col gap-2 border-t border-white/10 pb-28 pt-6 sm:flex-row sm:justify-between sm:pb-8;
+  @apply flex flex-col gap-2 border-t border-white/10 pb-36 pt-6 text-center sm:flex-row sm:justify-between sm:pb-8 sm:text-left;
 
   a {
     @apply text-white underline-offset-4 hover:underline;
+  }
+}
+
+.made-with {
+  @apply inline-flex flex-wrap items-center justify-center gap-x-1.5 sm:justify-start;
+}
+
+.made-with-heart {
+  @apply h-4 w-4 text-[#f43f5e];
+
+  @media (prefers-reduced-motion: no-preference) {
+    animation: heart-beat 1.6s ease-in-out infinite;
+  }
+}
+
+@keyframes heart-beat {
+  0%,
+  40%,
+  100% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.2);
   }
 }
 
@@ -492,7 +515,7 @@
 }
 
 .floating-wa {
-  @apply relative inline-flex h-14 w-14 items-center justify-center gap-2 rounded-full bg-whatsapp font-semibold text-white shadow-[0_12px_30px_-8px_rgba(11,122,67,0.65)] transition-transform hover:-translate-y-0.5 sm:w-auto sm:px-5;
+  @apply relative inline-flex h-[52px] items-center justify-center gap-2 rounded-full bg-whatsapp pl-3.5 pr-4 font-semibold text-white shadow-[0_12px_30px_-8px_rgba(11,122,67,0.65)] transition-transform hover:-translate-y-0.5 sm:h-14 sm:pl-4 sm:pr-5;
 
   @media (prefers-reduced-motion: no-preference) {
     animation: wa-pulse 2.4s ease-out infinite;
@@ -500,7 +523,7 @@
 }
 
 .floating-wa-label {
-  @apply sr-only sm:not-sr-only;
+  @apply whitespace-nowrap text-[13px] leading-none sm:text-[15px];
 }
 
 @keyframes wa-pulse {
