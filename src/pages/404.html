@@ -1,0 +1,25 @@
+<section class="section" aria-labelledby="notfound-title">
+  <div class="container max-w-2xl py-12 text-center">
+    <p class="eyebrow justify-center">Error 404</p>
+    <h1 id="notfound-title" class="hero-title">
+      Halaman <em>Tidak Ditemukan</em>
+    </h1>
+    <p class="hero-lead mx-auto">
+      Maaf, halaman yang Anda cari tidak tersedia atau sudah dipindahkan.
+      Kembali ke beranda untuk melihat layanan dan portofolio DS Studio.
+    </p>
+    <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+      <a href="/" class="btn btn-dark btn-lg">Kembali ke Beranda</a>
+      <a
+        href="<%= wa() %>"
+        class="btn btn-whatsapp btn-lg"
+        target="_blank"
+        rel="noopener"
+        data-wa-cta="404"
+      >
+        <svg class="icon-fill h-5 w-5" aria-hidden="true"><use href="#i-whatsapp" /></svg>
+        Chat WhatsApp
+      </a>
+    </div>
+  </div>
+</section>

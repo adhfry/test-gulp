@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+>
+  <url>
+    <loc><%= site.url %>/</loc>
+    <lastmod><%= buildDate %></lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc><%= site.url %>/images/og-image.jpg</image:loc>
+      <image:caption>DS Studio Fotografi Sumenep</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc><%= site.url %>/images/portfolio/wedding-pelaminan-adat-1280.webp</image:loc>
+      <image:caption>Pasangan pengantin berbusana adat di pelaminan bunga</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc><%= site.url %>/images/portfolio/prewedding-adat-outdoor-1280.webp</image:loc>
+      <image:caption>Prewedding outdoor pasangan berbusana adat hitam-emas di tengah hutan</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc><%= site.url %>/images/portfolio/wisuda-personal-1280.webp</image:loc>
+      <image:caption>Foto wisuda personal wisudawati dengan selempang nama di atas rumput</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc><%= site.url %>/images/portfolio/maternity-tujuh-bulanan-1280.webp</image:loc>
+      <image:caption>Ibu hamil berbusana ronce bunga hijau pada acara tujuh bulanan</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc><%= site.url %>/images/portfolio/portrait-hijab-fashion-1280.webp</image:loc>
+      <image:caption>Potret fashion wanita berhijab dengan kacamata hitam</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc><%= site.url %>/images/portfolio/wedding-pengantin-kebaya-pink-1280.webp</image:loc>
+      <image:caption>Pengantin wanita berkebaya merah muda dengan mahkota emas di dekorasi bunga</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc><%= site.url %>/images/portfolio/prewedding-gazebo-1280.webp</image:loc>
+      <image:caption>Foto prewedding pasangan duduk santai di gazebo taman</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc><%= site.url %>/images/portfolio/studio-couple-merah-1280.webp</image:loc>
+      <image:caption>Foto studio pasangan berbusana merah dan batik di depan backdrop tirai</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc><%= site.url %>/images/portfolio/wisuda-angkatan-1280.webp</image:loc>
+      <image:caption>Foto wisuda angkatan melempar topi toga di depan gedung kampus</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc><%= site.url %>/images/portfolio/portrait-outdoor-pegunungan-1280.webp</image:loc>
+      <image:caption>Potret outdoor wanita berhijab dengan latar pegunungan</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc><%= site.url %>/images/portfolio/wedding-pengantin-putih-1280.webp</image:loc>
+      <image:caption>Pengantin wanita berhijab dengan mahkota dan ronce melati, busana putih</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc><%= site.url %>/images/portfolio/maternity-tujuh-bulanan-couple-1280.webp</image:loc>
+      <image:caption>Foto maternity tujuh bulanan pasangan dengan busana ronce hijau</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc><%= site.url %>/images/portfolio/event-gathering-instansi-1280.webp</image:loc>
+      <image:caption>Dokumentasi gathering instansi di area wisata alam</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc><%= site.url %>/images/portfolio/studio-couple-batik-duduk-1280.webp</image:loc>
+      <image:caption>Foto studio pasangan berbusana batik duduk di depan backdrop tirai merah</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc><%= site.url %>/images/portfolio/prewedding-payung-taman-1280.webp</image:loc>
+      <image:caption>Prewedding pasangan dengan payung hitam di taman kota</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc><%= site.url %>/images/portfolio/portrait-profesional-1280.webp</image:loc>
+      <image:caption>Potret profesional wanita berblazer membawa buku</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc><%= site.url %>/images/portfolio/wedding-pengantin-melati-1280.webp</image:loc>
+      <image:caption>Potret pengantin wanita bergaun putih dengan ronce melati</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc><%= site.url %>/images/portfolio/wisuda-grup-1280.webp</image:loc>
+      <image:caption>Foto wisuda grup dengan selempang di halaman kampus</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc><%= site.url %>/images/portfolio/maternity-tujuh-bulanan-pose-1280.webp</image:loc>
+      <image:caption>Pose maternity ibu hamil dengan busana adat hijau</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc><%= site.url %>/images/portfolio/portrait-hijab-jendela-1280.webp</image:loc>
+      <image:caption>Potret wanita berhijab hitam di depan jendela putih</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc><%= site.url %>/images/portfolio/studio-couple-batik-1280.webp</image:loc>
+      <image:caption>Foto studio pasangan berbusana putih dan batik</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc><%= site.url %>/images/portfolio/portrait-duo-hijab-1280.webp</image:loc>
+      <image:caption>Foto duo wanita berhijab hitam berpose di depan bangunan putih</image:caption>
+    </image:image>
+  </url>
+</urlset>

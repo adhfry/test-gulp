@@ -24,13 +24,13 @@ if (theme.fonts.font_family.secondary) {
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  // only the pages that are actually built (see gulpfile.js)
   content: [
-    "./src/pages/**/*.html",
+    "./src/pages/index.html",
+    "./src/pages/404.html",
     "./src/partials/**/*.html",
     "./src/scripts/**/*.js",
-    "./node_modules/flowbite/**/*.js",
   ],
-  safelist: [{ pattern: /^swiper-/ }],
   theme: {
     screens: {
       sm: "540px",
@@ -41,7 +41,7 @@ module.exports = {
     },
     container: {
       center: true,
-      padding: "2rem",
+      padding: "1.25rem",
     },
     extend: {
       colors: {
@@ -52,6 +52,7 @@ module.exports = {
         secondary: theme.colors.default.theme_color.secondary,
         body: theme.colors.default.theme_color.body,
         border: theme.colors.default.theme_color.border,
+        whatsapp: theme.colors.default.theme_color.whatsapp,
         "theme-light": theme.colors.default.theme_color.theme_light,
         "theme-dark": theme.colors.default.theme_color.theme_dark,
       },
@@ -73,20 +74,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require("flowbite/plugin"),
-    require("@tailwindcss/typography"),
-    require("@tailwindcss/forms"),
-    require("tailwind-bootstrap-grid")({
-      generateContainer: false,
-      gridGutterWidth: "2rem",
-      gridGutters: {
-        1: "0.25rem",
-        2: "0.5rem",
-        3: "1rem",
-        4: "1.5rem",
-        5: "3rem",
-      },
-    }),
-  ],
+  plugins: [],
 };

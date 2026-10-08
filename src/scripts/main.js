@@ -1,174 +1,302 @@
-// import Swiper from "../plugins/swiper/swiper-bundle.js";
-// import Shuffle from "../plugins/shufflejs/shuffle";
-
 (function () {
   "use strict";
 
-  // Preloader js
-  // window.addEventListener("load", (e) => {
-  //   document.querySelector(".preloader").style.display = "none";
-  // });
+  document.documentElement.classList.add("reveal-ready");
 
-  //sticky header
-  const header = document.querySelector(".header");
-  window.addEventListener("scroll", () => {
-    const scrollY = window.scrollY;
-    if (scrollY > 0) {
-      header.classList.add("header-sticky");
-    } else {
-      header.classList.remove("header-sticky");
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  // sticky header shadow
+  const header = document.querySelector("[data-header]");
+  const toTop = document.querySelector("[data-to-top]");
+  const onScroll = () => {
+    const y = window.scrollY;
+    if (header) {
+      header.classList.toggle("is-scrolled", y > 8);
+    }
+    if (toTop) {
+      toTop.hidden = y < 900;
+    }
+  };
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  // mobile menu
+  const menuToggle = document.querySelector("[data-menu-toggle]");
+  const mobileMenu = document.querySelector("[data-mobile-menu]");
+  const setMenu = (open) => {
+    if (!menuToggle || !mobileMenu) {
+      return;
+    }
+    mobileMenu.hidden = !open;
+    menuToggle.setAttribute("aria-expanded", String(open));
+    menuToggle.setAttribute("aria-label", open ? "Tutup menu" : "Buka menu");
+    menuToggle
+      .querySelector("[data-menu-icon-open]")
+      .classList.toggle("hidden", open);
+    menuToggle
+      .querySelector("[data-menu-icon-close]")
+      .classList.toggle("hidden", !open);
+  };
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener("click", () => {
+      setMenu(mobileMenu.hidden);
+    });
+    mobileMenu.addEventListener("click", (e) => {
+      if (e.target.closest("a")) {
+        setMenu(false);
+      }
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !mobileMenu.hidden) {
+        setMenu(false);
+        menuToggle.focus();
+      }
+    });
+    window.matchMedia("(min-width: 1024px)").addEventListener("change", (e) => {
+      if (e.matches) {
+        setMenu(false);
+      }
+    });
+  }
+
+  // active nav link while scrolling (scroll spy)
+  const navLinks = document.querySelectorAll("[data-nav-link]");
+  const sections = Array.from(navLinks)
+    .map((link) => link.getAttribute("href").split("#")[1])
+    .filter((id, i, arr) => id && arr.indexOf(id) === i)
+    .map((id) => document.getElementById(id))
+    .filter(Boolean);
+
+  if ("IntersectionObserver" in window && sections.length) {
+    const spy = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+          const id = entry.target.id;
+          navLinks.forEach((link) => {
+            const active = link.getAttribute("href") === "/#" + id;
+            link.classList.toggle("is-active", active);
+            if (active) {
+              link.setAttribute("aria-current", "true");
+            } else {
+              link.removeAttribute("aria-current");
+            }
+          });
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px" }
+    );
+    sections.forEach((section) => {
+      spy.observe(section);
+    });
+  }
+
+  // reveal on scroll
+  const revealItems = document.querySelectorAll("[data-reveal]");
+  if (!reduceMotion && "IntersectionObserver" in window) {
+    const reveal = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      { rootMargin: "0px 0px -8% 0px" }
+    );
+    revealItems.forEach((item) => {
+      // stagger siblings in grids/lists
+      const parent = item.parentElement;
+      const siblings = Array.from(parent.children).filter((el) =>
+        el.hasAttribute("data-reveal")
+      );
+      const index = siblings.indexOf(item);
+      if (index > 0) {
+        item.style.setProperty("--reveal-delay", Math.min(index, 5) * 70 + "ms");
+      }
+      reveal.observe(item);
+    });
+  } else {
+    revealItems.forEach((item) => {
+      item.classList.add("is-visible");
+    });
+  }
+
+  // portfolio filter
+  const gallery = document.querySelector("[data-gallery]");
+  const filterGroup = document.querySelector("[data-gallery-filter]");
+  const galleryStatus = document.querySelector("[data-gallery-status]");
+  const galleryItems = Array.from(
+    document.querySelectorAll("[data-gallery] .gallery-item")
+  );
+
+  if (filterGroup && gallery) {
+    filterGroup.addEventListener("click", (e) => {
+      const button = e.target.closest("[data-filter]");
+      if (!button) {
+        return;
+      }
+      const filter = button.dataset.filter;
+
+      filterGroup.querySelectorAll("[data-filter]").forEach((btn) => {
+        btn.setAttribute("aria-pressed", String(btn === button));
+      });
+
+      let visible = 0;
+      galleryItems.forEach((item) => {
+        const show = filter === "all" || item.dataset.category === filter;
+        item.hidden = !show;
+        item.classList.remove("is-entering");
+        if (show) {
+          visible += 1;
+          if (!reduceMotion) {
+            // restart the entrance animation
+            void item.offsetWidth;
+            item.classList.add("is-entering");
+          }
+        }
+      });
+
+      if (galleryStatus) {
+        galleryStatus.textContent =
+          "Menampilkan " + visible + " foto " + button.textContent.trim();
+      }
+    });
+  }
+
+  // lightbox
+  const dialog = document.querySelector("[data-lightbox-dialog]");
+  if (dialog && typeof dialog.showModal === "function" && gallery) {
+    const img = dialog.querySelector("[data-lightbox-img]");
+    const caption = dialog.querySelector("[data-lightbox-caption]");
+    const counter = dialog.querySelector("[data-lightbox-counter]");
+    let current = [];
+    let index = 0;
+    let opener = null;
+
+    const show = (i) => {
+      index = (i + current.length) % current.length;
+      const link = current[index];
+      img.src = link.getAttribute("href");
+      img.alt = link.dataset.caption || "";
+      img.width = Number(link.dataset.width) || 1280;
+      img.height = Number(link.dataset.height) || 1920;
+      caption.textContent = link.dataset.caption || "";
+      counter.textContent = index + 1 + " / " + current.length;
+
+      // preload neighbours for snappy navigation
+      [index - 1, index + 1].forEach((n) => {
+        const neighbour = current[(n + current.length) % current.length];
+        if (neighbour) {
+          new Image().src = neighbour.getAttribute("href");
+        }
+      });
+    };
+
+    gallery.addEventListener("click", (e) => {
+      const link = e.target.closest("[data-lightbox]");
+      if (!link) {
+        return;
+      }
+      e.preventDefault();
+      current = Array.from(gallery.querySelectorAll("[data-lightbox]")).filter(
+        (a) => !a.closest(".gallery-item").hidden
+      );
+      opener = link;
+      show(current.indexOf(link));
+      dialog.showModal();
+    });
+
+    dialog
+      .querySelector("[data-lightbox-prev]")
+      .addEventListener("click", () => {
+        show(index - 1);
+      });
+    dialog
+      .querySelector("[data-lightbox-next]")
+      .addEventListener("click", () => {
+        show(index + 1);
+      });
+    dialog
+      .querySelector("[data-lightbox-close]")
+      .addEventListener("click", () => {
+        dialog.close();
+      });
+
+    dialog.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") {
+        show(index - 1);
+      }
+      if (e.key === "ArrowRight") {
+        show(index + 1);
+      }
+    });
+
+    // click on the dark area closes
+    dialog.addEventListener("click", (e) => {
+      if (
+        e.target === dialog ||
+        e.target.classList.contains("lightbox-inner")
+      ) {
+        dialog.close();
+      }
+    });
+
+    dialog.addEventListener("close", () => {
+      img.removeAttribute("src");
+      if (opener) {
+        opener.focus();
+      }
+    });
+
+    // swipe on touch devices
+    let touchX = null;
+    dialog.addEventListener(
+      "touchstart",
+      (e) => {
+        touchX = e.touches[0].clientX;
+      },
+      { passive: true }
+    );
+    dialog.addEventListener(
+      "touchend",
+      (e) => {
+        if (touchX === null) {
+          return;
+        }
+        const dx = e.changedTouches[0].clientX - touchX;
+        if (Math.abs(dx) > 50) {
+          show(dx > 0 ? index - 1 : index + 1);
+        }
+        touchX = null;
+      },
+      { passive: true }
+    );
+  }
+
+  // keep the copyright year current
+  document.querySelectorAll("[data-year]").forEach((el) => {
+    el.textContent = new Date().getFullYear();
+  });
+
+  // whatsapp click tracking (works when GA4 / Meta Pixel is added later)
+  document.addEventListener("click", (e) => {
+    const cta = e.target.closest("[data-wa-cta]");
+    if (!cta) {
+      return;
+    }
+    const location = cta.dataset.waCta;
+    if (typeof window.gtag === "function") {
+      window.gtag("event", "whatsapp_click", { cta_location: location });
+    }
+    if (typeof window.fbq === "function") {
+      window.fbq("track", "Contact", { cta_location: location });
     }
   });
-
-  //reviews-carousel
-  new Swiper(".reviews-carousel", {
-    loop: true,
-    spaceBetween: 20,
-    pagination: {
-      el: ".reviews-carousel-pagination",
-      clickable: true,
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: 2,
-      },
-      992: {
-        slidesPerView: 3,
-      },
-    },
-  });
-
-  //auth-banner-carousel
-  new Swiper(".auth-banner-carousel", {
-    slidesPerView: 1,
-    pagination: {
-      el: ".auth-banner-carousel .pagination",
-      type: "bullets",
-      clickable: true,
-    },
-  });
-
-  // for tab component
-  // Get all the tab groups on the page
-  const tabGroups = document.querySelectorAll("[data-tab-group]");
-  // Loop through each tab group
-  tabGroups.forEach((tabGroup) => {
-    // Get the tabs nav and content for this tab group
-    const tabsNav = tabGroup.querySelector("[data-tab-nav]");
-    const tabsNavItem = tabsNav.querySelectorAll("[data-tab]");
-
-    // Get the active tab index from local storage, or default to 0 if not set
-    const activeTabName =
-      localStorage.getItem(`activeTabName-${tabGroup.dataset.tabGroup}`) ||
-      tabsNavItem[0].getAttribute("data-tab");
-
-    // Set the active tab
-    setActiveTab(tabGroup, activeTabName);
-
-    // Add a click event listener to each tab nav item
-    tabsNavItem.forEach((tabNavItem) => {
-      tabNavItem.addEventListener("click", (e) => {
-        e.preventDefault();
-        // Get the index of the clicked tab nav item
-        const tabName = tabNavItem.dataset.tab;
-        setActiveTab(tabGroup, tabName);
-
-        // Save the active tab index to local storage
-        localStorage.setItem(
-          `activeTabName-${tabGroup.dataset.tabGroup}`,
-          tabName
-        );
-      });
-    });
-  });
-
-  // Function to set the active tab for a given tab group
-  function setActiveTab(tabGroup, tabName) {
-    // Get the tabs nav and content for this tab group
-    const tabsNav = tabGroup.querySelector("[data-tab-nav]");
-    const tabsContent = tabGroup.querySelector("[data-tab-content]");
-
-    // Remove the active class from all tab nav items and content panes
-    tabsNav.querySelectorAll("[data-tab]").forEach((tabNavItem) => {
-      tabNavItem.classList.remove("active");
-    });
-    tabsContent.querySelectorAll("[data-tab-panel]").forEach((tabPane) => {
-      tabPane.classList.remove("active");
-    });
-
-    // Add the active class to the selected tab nav item and content pane
-    const selectedTabNavItem = tabsNav.querySelector(`[data-tab="${tabName}"]`);
-    selectedTabNavItem.classList.add("active");
-    const selectedTabPane = tabsContent.querySelector(
-      `[data-tab-panel="${tabName}"]`
-    );
-    selectedTabPane.classList.add("active");
-  }
-
-  //counter
-  function counter(el, duration) {
-    const endValue = Number(el.innerText.replace(/\D/gi, ""));
-    const text = el.innerText.replace(/\W|\d/gi, "");
-    const timeStep = Math.round(duration / endValue);
-    let current = 0;
-    const timer = setInterval(() => {
-      if (current > endValue) {
-        current = endValue;
-      } else {
-        current += 1;
-      }
-      el.innerText = current + text;
-      if (current === endValue) {
-        clearInterval(timer);
-      }
-    }, timeStep);
-  }
-
-  document.querySelectorAll(".counter .count").forEach((count) => {
-    counter(count, 500);
-  });
-
-  //play youtube-video
-  const videoPlayBtn = document.querySelector(".video-play-btn");
-  if (videoPlayBtn) {
-    videoPlayBtn.addEventListener("click", function () {
-      const videoPlayer = this.closest(".video").querySelector(".video-player");
-      videoPlayer.classList.remove("hidden");
-    });
-  }
-
-  // Accordion component
-  const accordion = document.querySelectorAll("[data-accordion]");
-  accordion.forEach((header) => {
-    header.addEventListener("click", () => {
-      const accordionItem = header.parentElement;
-      accordionItem.classList.toggle("active");
-    });
-  });
-
-  //shuffle
-  const Shuffle = window.Shuffle;
-  const tabItems = document.querySelector(".integration-tab-items");
-  if (tabItems) {
-    const myShuffle = new Shuffle(tabItems, {
-      itemSelector: ".integration-tab-item",
-      sizer: ".integration-tab-item",
-      buffer: 1,
-    });
-    const tabLinks = document.querySelectorAll(".integration-tab .filter-btn");
-    tabLinks.forEach((tabItem) => {
-      tabItem.addEventListener("click", function (e) {
-        e.preventDefault();
-        let filter;
-        const group = tabItem.getAttribute("data-group");
-        filter = group;
-        if (filter === "all") {
-          filter = Shuffle.ALL_ITEMS;
-        }
-        tabLinks.forEach((link) => link.classList.remove("filter-btn-active"));
-        this.classList.add("filter-btn-active");
-        myShuffle.filter(filter);
-      });
-    });
-  }
 })();

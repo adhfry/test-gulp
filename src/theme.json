@@ -1,27 +1,51 @@
 {
+  "site": {
+    "name": "DS Studio",
+    "legal_name": "DS Studio Fotografi",
+    "url": "https://ds-studio.vercel.app",
+    "whatsapp": "6282338524669",
+    "whatsapp_display": "+62 823-3852-4669",
+    "instagram": "ds.studio_126",
+    "email": "ds.studio@gmail.com",
+    "maps_url": "https://maps.app.goo.gl/j4JrzKAqi1TBPbHj9",
+    "maps_embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.045962415635!2d113.86132867543267!3d-7.003870668601022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd9e54f560a0faf%3A0xe5e362225b9a208b!2sDs.Studio%20Fotografi!5e0!3m2!1sid!2sid!4v1791424217836!5m2!1sid!2sid",
+    "address": {
+      "street": "Jl. Pujangga No.23, Pujangga, Kepanjin",
+      "locality": "Kota Sumenep",
+      "district": "Kec. Kota Sumenep",
+      "region": "Jawa Timur",
+      "postal_code": "69415",
+      "country": "ID"
+    },
+    "geo": {
+      "lat": -7.003876,
+      "lng": 113.861329
+    }
+  },
   "colors": {
     "default": {
       "theme_color": {
-        "primary": "#FE6019",
-        "secondary": "#FEE140",
-        "body": "#fafafa",
-        "border": "#EBEBEB",
-        "theme_light": "#E5E5E5",
-        "theme_dark": "#1a202c"
+        "primary": "#8a5a2b",
+        "secondary": "#d6b48a",
+        "body": "#faf8f5",
+        "border": "#e7e1d9",
+        "theme_light": "#f3eee7",
+        "theme_dark": "#1c1917",
+        "whatsapp": "#0b7a43"
       },
       "text_color": {
-        "default": "#888888",
-        "dark": "#222",
-        "light": "#ceced0"
+        "default": "#57534e",
+        "dark": "#1c1917",
+        "light": "#a8a29e"
       }
     }
   },
   "fonts": {
     "font_family": {
-      "primary": "Poppins:wght@400;500;600;700",
+      "primary": "Plus+Jakarta+Sans:wght@400;500;600;700",
       "primary_type": "sans-serif",
-      "secondary": "Merriweather:wght@700;900",
-      "secondary_type": "sans-serif"
+      "secondary": "Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600",
+      "secondary_type": "serif"
     },
     "font_size": {
       "base": "16",

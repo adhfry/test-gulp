@@ -1,754 +1,844 @@
-<!-- Banner -->
-<section class="section banner relative pb-10 pt-0">
-  <div
-    id="default-carousel"
-    class="relative w-full"
-    data-carousel="slide"
-    data-carousel-interval="6000"
-  >
-    <!-- Carousel wrapper -->
-    <div
-      class="relative h-44 overflow-hidden rounded-lg sm:h-52 md:h-72 lg:h-80 xl:h-[38rem]"
-    >
-      <!-- Item 1 -->
-      <div class="hidden duration-1000 ease-in-out" data-carousel-item>
-        <div
-          class="container absolute left-1/2 top-1/2 hidden w-full -translate-x-1/2 -translate-y-1/2 xl:block"
+<!-- Hero -->
+<section id="beranda" class="hero" aria-labelledby="hero-title">
+  <div class="container grid items-center gap-12 lg:grid-cols-12 lg:gap-8">
+    <div class="lg:col-span-6 xl:col-span-6">
+      <p class="eyebrow" data-reveal>
+        <svg class="icon h-4 w-4" aria-hidden="true"><use href="#i-map-pin" /></svg>
+        Studio Foto &amp; Videografi · Sumenep, Madura
+      </p>
+      <h1 id="hero-title" class="hero-title" data-reveal>
+        Studio Foto Sumenep untuk Momen yang
+        <em>Tak Terulang</em>
+      </h1>
+      <p class="hero-lead" data-reveal>
+        DS Studio mengabadikan pernikahan, prewedding, wisuda, maternity,
+        hingga acara instansi Anda dengan arahan gaya yang nyaman dan hasil
+        edit yang elegan. Ceritakan rencana Anda, kami bantu wujudkan hasilnya.
+      </p>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row" data-reveal>
+        <a
+          href="<%= wa('Halo DS Studio, saya ingin konsultasi & tanya pricelist foto.') %>"
+          class="btn btn-whatsapp btn-lg"
+          target="_blank"
+          rel="noopener"
+          data-wa-cta="hero"
         >
-          <div class="row items-center">
-            <div class="lg:col-6">
-              <h1 class="banner-title">Selamat datang di Ds.Studio</h1>
-              <p class="mt-6">
-                Tempat di mana setiap momen istimewa menjadi kenangan abadi.
-                Jelajahi portofolio kami dan biarkan kami mengabadikan kisah
-                cinta Anda dengan indah.
-              </p>
-              <a class="btn btn-white mt-8" href="#">Hubungi Sekarang!</a>
-            </div>
-            <div class="lg:col-6">
-              <img
-                class="w-full object-contain"
-                src="images/main-banner.gif"
-                style="width: 175%"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-        <img
-          src="images/posts/FOTO17.jpg"
-          class="absolute left-1/2 top-1/2 block w-full -translate-x-1/2 -translate-y-1/2 px-4 md:px-8 lg:px-14 xl:hidden"
-          alt="..."
-        />
+          <svg class="icon-fill h-5 w-5" aria-hidden="true"><use href="#i-whatsapp" /></svg>
+          Konsultasi Gratis via WhatsApp
+        </a>
+        <a href="#portofolio" class="btn btn-outline btn-lg">
+          Lihat Portofolio
+          <svg class="icon h-5 w-5" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+        </a>
       </div>
-      <!-- Item 2 -->
-      <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <img
-          src="images/tes2.jpg"
-          class="absolute left-1/2 top-1/2 block w-full -translate-x-1/2 -translate-y-1/2 px-4 md:px-8 lg:px-14"
-          alt="..."
-        />
-      </div>
-      <!-- Item 3 -->
-      <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <img
-          src="images/tes3.jpg"
-          class="absolute left-1/2 top-1/2 block w-full -translate-x-1/2 -translate-y-1/2 px-4 md:px-8 lg:px-14"
-          alt="..."
-        />
-      </div>
-      <!-- Item 4 -->
-      <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <img
-          src="images/posts/WISUDA.jpg"
-          class="absolute left-1/2 top-1/2 block w-full -translate-x-1/2 -translate-y-1/2 px-4 md:px-8 lg:px-14"
-          alt="..."
-        />
-      </div>
-      <!-- Item 5 -->
-      <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <img
-          src="images/posts/PUSKESMAS.jpg"
-          class="absolute left-1/2 top-1/2 block w-full -translate-x-1/2 -translate-y-1/2 px-4 md:px-8 lg:px-14"
-          alt="..."
-        />
-      </div>
+      <ul class="hero-points" role="list" data-reveal>
+        <li>
+          <svg class="icon h-4 w-4" aria-hidden="true"><use href="#i-check" /></svg>
+          Foto studio &amp; outdoor
+        </li>
+        <li>
+          <svg class="icon h-4 w-4" aria-hidden="true"><use href="#i-check" /></svg>
+          Arahan pose dari fotografer
+        </li>
+        <li>
+          <svg class="icon h-4 w-4" aria-hidden="true"><use href="#i-check" /></svg>
+          Foto &amp; video dokumentasi
+        </li>
+      </ul>
     </div>
-    <!-- Slider indicators -->
-    <div
-      class="absolute bottom-[-1.75rem] left-1/2 z-30 flex -translate-x-1/2 space-x-3 rounded-md bg-slate-300 px-2 py-[0.125rem] md:-bottom-9 rtl:space-x-reverse"
-    >
-      <button
-        type="button"
-        class="h-3 w-3 rounded-full"
-        aria-current="true"
-        aria-label="Slide 1"
-        data-carousel-slide-to="0"
-      ></button>
-      <button
-        type="button"
-        class="h-3 w-3 rounded-full"
-        aria-current="false"
-        aria-label="Slide 2"
-        data-carousel-slide-to="1"
-      ></button>
-      <button
-        type="button"
-        class="h-3 w-3 rounded-full"
-        aria-current="false"
-        aria-label="Slide 3"
-        data-carousel-slide-to="2"
-      ></button>
-      <button
-        type="button"
-        class="h-3 w-3 rounded-full"
-        aria-current="false"
-        aria-label="Slide 4"
-        data-carousel-slide-to="3"
-      ></button>
-      <button
-        type="button"
-        class="h-3 w-3 rounded-full"
-        aria-current="false"
-        aria-label="Slide 5"
-        data-carousel-slide-to="4"
-      ></button>
-    </div>
-    <!-- Slider controls -->
-    <!-- <button
-      type="button"
-      class="group absolute start-0 top-0 z-30 flex h-full cursor-pointer items-center justify-center px-4 focus:outline-none"
-      data-carousel-prev
-    >
-      <span
-        class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/30 group-hover:bg-white/50 group-focus:outline-none group-focus:ring-4 group-focus:ring-white dark:bg-gray-800/30 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70"
-      >
-        <svg
-          class="h-4 w-4 text-white dark:text-gray-800 rtl:rotate-180"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 6 10"
-        >
-          <path
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M5 1 1 5l4 4"
+
+    <div class="lg:col-span-6 xl:col-span-6">
+      <div class="hero-visual" data-reveal>
+        <figure class="hero-photo-main">
+          <img
+            src="/images/portfolio/wedding-pelaminan-adat-640.webp"
+            srcset="/images/portfolio/wedding-pelaminan-adat-640.webp 640w, /images/portfolio/wedding-pelaminan-adat-1280.webp 1280w"
+            sizes="(min-width: 1024px) 440px, 78vw"
+            width="640"
+            height="960"
+            fetchpriority="high"
+            decoding="async"
+            alt="Pasangan pengantin berbusana adat di pelaminan bunga, karya DS Studio"
           />
-        </svg>
-        <span class="sr-only">Previous</span>
-      </span>
+        </figure>
+        <figure class="hero-photo-secondary">
+          <img
+            src="/images/portfolio/prewedding-gazebo-640.webp"
+            width="640"
+            height="427"
+            decoding="async"
+            alt="Foto prewedding pasangan di gazebo taman"
+          />
+        </figure>
+        <figure class="hero-photo-tertiary">
+          <img
+            src="/images/portfolio/wisuda-personal-640.webp"
+            width="640"
+            height="960"
+            decoding="async"
+            alt="Foto wisuda personal di atas rumput hijau"
+          />
+        </figure>
+        <a
+          href="<%= instagramUrl %>"
+          class="hero-badge"
+          target="_blank"
+          rel="noopener"
+        >
+          <span class="hero-badge-icon" aria-hidden="true">
+            <svg class="icon h-5 w-5"><use href="#i-instagram" /></svg>
+          </span>
+          <span>
+            <span class="block text-xs text-text">Karya terbaru di</span>
+            <span class="block font-semibold text-dark">@<%= site.instagram %></span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /Hero -->
+
+<!-- Highlights -->
+<section class="highlights" aria-label="Keunggulan singkat DS Studio">
+  <div class="container">
+    <ul class="highlight-list" role="list">
+      <li>
+        <svg class="icon h-6 w-6" aria-hidden="true"><use href="#i-camera" /></svg>
+        <span><strong>Fotografer Profesional</strong> Peralatan &amp; tim berpengalaman</span>
+      </li>
+      <li>
+        <svg class="icon h-6 w-6" aria-hidden="true"><use href="#i-sparkles" /></svg>
+        <span><strong>Editing Elegan</strong> Warna natural &amp; retouch rapi</span>
+      </li>
+      <li>
+        <svg class="icon h-6 w-6" aria-hidden="true"><use href="#i-aperture" /></svg>
+        <span><strong>Studio &amp; Outdoor</strong> Backdrop studio atau lokasi pilihan</span>
+      </li>
+      <li>
+        <svg class="icon h-6 w-6" aria-hidden="true"><use href="#i-chat" /></svg>
+        <span><strong>Booking Mudah</strong> Konsultasi &amp; jadwal via WhatsApp</span>
+      </li>
+    </ul>
+  </div>
+</section>
+<!-- /Highlights -->
+
+<!-- Layanan -->
+<section id="layanan" class="section" aria-labelledby="layanan-title">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Layanan Kami</p>
+      <h2 id="layanan-title">Satu Studio untuk Semua Momen Penting Anda</h2>
+      <p>
+        Dari akad nikah hingga hari wisuda, setiap sesi kami rancang sesuai
+        kebutuhan Anda. Pilih layanan, lalu tanyakan detail paket dan jadwal
+        langsung lewat WhatsApp.
+      </p>
+    </div>
+
+    <ul class="service-grid" role="list">
+      <li class="service-card" data-reveal>
+        <span class="service-icon" aria-hidden="true"><svg class="icon h-6 w-6"><use href="#i-rings" /></svg></span>
+        <h3>Wedding &amp; Akad Nikah</h3>
+        <p>
+          Dokumentasi akad, resepsi, hingga pelaminan adat. Momen sakral dan
+          detail kecil terekam utuh dari awal sampai akhir acara.
+        </p>
+        <a
+          href="<%= wa('Halo DS Studio, saya ingin tanya paket foto Wedding / Akad Nikah.') %>"
+          class="service-link"
+          target="_blank"
+          rel="noopener"
+          data-wa-cta="service-wedding"
+        >
+          Tanya paket wedding
+          <svg class="icon h-4 w-4" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+        </a>
+      </li>
+      <li class="service-card" data-reveal>
+        <span class="service-icon" aria-hidden="true"><svg class="icon h-6 w-6"><use href="#i-heart" /></svg></span>
+        <h3>Prewedding</h3>
+        <p>
+          Konsep indoor maupun outdoor, busana modern atau adat. Kami arahkan
+          pose agar ekspresi Anda berdua tetap natural.
+        </p>
+        <a
+          href="<%= wa('Halo DS Studio, saya ingin tanya paket foto Prewedding.') %>"
+          class="service-link"
+          target="_blank"
+          rel="noopener"
+          data-wa-cta="service-prewedding"
+        >
+          Tanya paket prewedding
+          <svg class="icon h-4 w-4" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+        </a>
+      </li>
+      <li class="service-card" data-reveal>
+        <span class="service-icon" aria-hidden="true"><svg class="icon h-6 w-6"><use href="#i-graduation" /></svg></span>
+        <h3>Wisuda</h3>
+        <p>
+          Foto wisuda personal, bersama keluarga, hingga foto angkatan untuk
+          kampus dan sekolah. Kenang hasil perjuangan Anda dengan bangga.
+        </p>
+        <a
+          href="<%= wa('Halo DS Studio, saya ingin tanya paket foto Wisuda.') %>"
+          class="service-link"
+          target="_blank"
+          rel="noopener"
+          data-wa-cta="service-wisuda"
+        >
+          Tanya paket wisuda
+          <svg class="icon h-4 w-4" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+        </a>
+      </li>
+      <li class="service-card" data-reveal>
+        <span class="service-icon" aria-hidden="true"><svg class="icon h-6 w-6"><use href="#i-baby" /></svg></span>
+        <h3>Maternity &amp; Tujuh Bulanan</h3>
+        <p>
+          Sesi kehamilan yang hangat, termasuk dokumentasi acara tujuh bulanan
+          dengan busana adat untuk calon ayah dan ibu.
+        </p>
+        <a
+          href="<%= wa('Halo DS Studio, saya ingin tanya paket foto Maternity / Tujuh Bulanan.') %>"
+          class="service-link"
+          target="_blank"
+          rel="noopener"
+          data-wa-cta="service-maternity"
+        >
+          Tanya paket maternity
+          <svg class="icon h-4 w-4" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+        </a>
+      </li>
+      <li class="service-card" data-reveal>
+        <span class="service-icon" aria-hidden="true"><svg class="icon h-6 w-6"><use href="#i-user" /></svg></span>
+        <h3>Portrait &amp; Personal Branding</h3>
+        <p>
+          Foto profil, fashion, katalog produk, hingga kebutuhan CV dan media
+          sosial. Tampil percaya diri dengan potret yang berkarakter.
+        </p>
+        <a
+          href="<%= wa('Halo DS Studio, saya ingin tanya paket foto Portrait / Personal Branding.') %>"
+          class="service-link"
+          target="_blank"
+          rel="noopener"
+          data-wa-cta="service-portrait"
+        >
+          Tanya paket portrait
+          <svg class="icon h-4 w-4" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+        </a>
+      </li>
+      <li class="service-card" data-reveal>
+        <span class="service-icon" aria-hidden="true"><svg class="icon h-6 w-6"><use href="#i-aperture" /></svg></span>
+        <h3>Foto Studio Couple &amp; Keluarga</h3>
+        <p>
+          Sesi di studio dengan backdrop dan pencahayaan terkontrol. Cocok untuk
+          foto lamaran, couple, keluarga, maupun dokumen penting.
+        </p>
+        <a
+          href="<%= wa('Halo DS Studio, saya ingin tanya paket Foto Studio (couple / keluarga).') %>"
+          class="service-link"
+          target="_blank"
+          rel="noopener"
+          data-wa-cta="service-studio"
+        >
+          Tanya paket studio
+          <svg class="icon h-4 w-4" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+        </a>
+      </li>
+      <li class="service-card" data-reveal>
+        <span class="service-icon" aria-hidden="true"><svg class="icon h-6 w-6"><use href="#i-users" /></svg></span>
+        <h3>Event &amp; Instansi</h3>
+        <p>
+          Dokumentasi gathering, seminar, peresmian, dan kegiatan kantor atau
+          instansi. Foto siap pakai untuk laporan dan publikasi.
+        </p>
+        <a
+          href="<%= wa('Halo DS Studio, saya ingin tanya dokumentasi Event / Instansi.') %>"
+          class="service-link"
+          target="_blank"
+          rel="noopener"
+          data-wa-cta="service-event"
+        >
+          Tanya dokumentasi event
+          <svg class="icon h-4 w-4" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+        </a>
+      </li>
+      <li class="service-card" data-reveal>
+        <span class="service-icon" aria-hidden="true"><svg class="icon h-6 w-6"><use href="#i-video" /></svg></span>
+        <h3>Video Dokumentasi</h3>
+        <p>
+          Rekam suasana acara dalam bentuk video dokumentasi maupun highlight
+          singkat yang siap dibagikan ke keluarga dan media sosial.
+        </p>
+        <a
+          href="<%= wa('Halo DS Studio, saya ingin tanya paket Video Dokumentasi.') %>"
+          class="service-link"
+          target="_blank"
+          rel="noopener"
+          data-wa-cta="service-video"
+        >
+          Tanya paket video
+          <svg class="icon h-4 w-4" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+        </a>
+      </li>
+      <li class="service-card" data-reveal>
+        <span class="service-icon" aria-hidden="true"><svg class="icon h-6 w-6"><use href="#i-invitation" /></svg></span>
+        <h3>Undangan Digital</h3>
+        <p>
+          Undangan pernikahan digital dengan galeri foto, lokasi acara, hitung
+          mundur, musik, dan amplop digital. Praktis dibagikan ke semua tamu.
+        </p>
+        <a
+          href="<%= wa('Halo DS Studio, saya ingin tanya tentang Undangan Digital.') %>"
+          class="service-link"
+          target="_blank"
+          rel="noopener"
+          data-wa-cta="service-undangan"
+        >
+          Tanya undangan digital
+          <svg class="icon h-4 w-4" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+<!-- /Layanan -->
+
+<!-- Portofolio -->
+<section
+  id="portofolio"
+  class="section bg-theme-light/60"
+  aria-labelledby="portofolio-title"
+>
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Portofolio</p>
+      <h2 id="portofolio-title">Hasil Karya DS Studio</h2>
+      <p>
+        Sebagian karya dari sesi wedding, prewedding, wisuda, maternity, hingga
+        event. Ketuk foto untuk melihat lebih besar.
+      </p>
+    </div>
+
+    <div
+      class="filter-bar"
+      role="group"
+      aria-label="Filter kategori portofolio"
+      data-gallery-filter
+    >
+      <button type="button" class="filter-btn" aria-pressed="true" data-filter="all">Semua</button>
+      <button type="button" class="filter-btn" aria-pressed="false" data-filter="wedding">Wedding</button>
+      <button type="button" class="filter-btn" aria-pressed="false" data-filter="prewedding">Prewedding</button>
+      <button type="button" class="filter-btn" aria-pressed="false" data-filter="maternity">Maternity</button>
+      <button type="button" class="filter-btn" aria-pressed="false" data-filter="wisuda">Wisuda</button>
+      <button type="button" class="filter-btn" aria-pressed="false" data-filter="portrait">Portrait</button>
+      <button type="button" class="filter-btn" aria-pressed="false" data-filter="studio">Studio</button>
+      <button type="button" class="filter-btn" aria-pressed="false" data-filter="event">Event</button>
+    </div>
+    <p class="sr-only" aria-live="polite" data-gallery-status></p>
+
+    @@include('sections/gallery.html')
+
+    <div class="mt-12 flex flex-col items-center gap-3 text-center" data-reveal>
+      <p>Ingin melihat lebih banyak hasil foto &amp; video terbaru?</p>
+      <a
+        href="<%= instagramUrl %>"
+        class="btn btn-dark"
+        target="_blank"
+        rel="noopener"
+      >
+        <svg class="icon h-5 w-5" aria-hidden="true"><use href="#i-instagram" /></svg>
+        Kunjungi Instagram @<%= site.instagram %>
+      </a>
+    </div>
+  </div>
+</section>
+<!-- /Portofolio -->
+
+<!-- Tentang -->
+<section id="tentang" class="section" aria-labelledby="tentang-title">
+  <div class="container grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+    <div class="about-visual" data-reveal>
+      <img
+        src="/images/portfolio/tim-ds-studio-640.webp"
+        srcset="/images/portfolio/tim-ds-studio-640.webp 640w, /images/portfolio/tim-ds-studio-1280.webp 1280w"
+        sizes="(min-width: 1024px) 480px, 90vw"
+        width="640"
+        height="853"
+        loading="lazy"
+        decoding="async"
+        alt="Tim DS Studio saat bertugas mendokumentasikan acara pernikahan"
+      />
+      <p class="about-caption">Tim DS Studio saat bertugas di acara pernikahan</p>
+    </div>
+    <div data-reveal>
+      <p class="eyebrow">Tentang DS Studio</p>
+      <h2 id="tentang-title">Partner Dokumentasi yang Mengerti Momen Anda</h2>
+      <p class="mt-5">
+        DS Studio adalah studio fotografi di Kota Sumenep yang berfokus
+        mengabadikan momen penting dengan sentuhan elegan. Kami terbiasa
+        bekerja di beragam acara, mulai dari pernikahan adat Madura,
+        prewedding, wisuda, hingga kegiatan instansi.
+      </p>
+      <p class="mt-4">
+        Bagi kami, foto bukan sekadar gambar, tapi cerita yang akan Anda
+        buka lagi bertahun-tahun ke depan. Karena itu kami mendampingi sejak
+        konsultasi konsep, memberi arahan saat sesi, sampai hasil akhir siap
+        Anda simpan dan bagikan.
+      </p>
+      <ul class="check-list mt-8" role="list">
+        <li>
+          <svg class="icon h-5 w-5" aria-hidden="true"><use href="#i-check" /></svg>
+          Konsultasi konsep, busana, dan lokasi sebelum sesi
+        </li>
+        <li>
+          <svg class="icon h-5 w-5" aria-hidden="true"><use href="#i-check" /></svg>
+          Arahan pose agar hasil tetap natural walau tidak terbiasa difoto
+        </li>
+        <li>
+          <svg class="icon h-5 w-5" aria-hidden="true"><use href="#i-check" /></svg>
+          Proses seleksi dan editing warna yang konsisten
+        </li>
+        <li>
+          <svg class="icon h-5 w-5" aria-hidden="true"><use href="#i-check" /></svg>
+          File digital resolusi tinggi, siap cetak dan diunggah
+        </li>
+      </ul>
+      <a
+        href="<%= wa('Halo DS Studio, saya ingin konsultasi untuk acara saya.') %>"
+        class="btn btn-whatsapp mt-8"
+        target="_blank"
+        rel="noopener"
+        data-wa-cta="about"
+      >
+        <svg class="icon-fill h-5 w-5" aria-hidden="true"><use href="#i-whatsapp" /></svg>
+        Ceritakan Acara Anda
+      </a>
+    </div>
+  </div>
+</section>
+<!-- /Tentang -->
+
+<!-- Cara Booking -->
+<section
+  id="cara-booking"
+  class="section section-dark"
+  aria-labelledby="booking-title"
+>
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Cara Booking</p>
+      <h2 id="booking-title">Booking Mudah dalam 4 Langkah</h2>
+      <p>
+        Semua proses dilakukan lewat WhatsApp. Semakin awal Anda menghubungi
+        kami, semakin besar peluang tanggal pilihan Anda masih tersedia.
+      </p>
+    </div>
+
+    <ol class="steps" role="list">
+      <li class="step" data-reveal>
+        <span class="step-number" aria-hidden="true">01</span>
+        <svg class="icon h-7 w-7 text-secondary" aria-hidden="true"><use href="#i-chat" /></svg>
+        <h3>Chat WhatsApp</h3>
+        <p>
+          Sampaikan jenis acara, tanggal, lokasi, dan konsep yang Anda
+          inginkan.
+        </p>
+      </li>
+      <li class="step" data-reveal>
+        <span class="step-number" aria-hidden="true">02</span>
+        <svg class="icon h-7 w-7 text-secondary" aria-hidden="true"><use href="#i-list" /></svg>
+        <h3>Pilih Paket</h3>
+        <p>
+          Kami kirimkan pricelist dan rekomendasi paket yang paling sesuai
+          dengan kebutuhan Anda.
+        </p>
+      </li>
+      <li class="step" data-reveal>
+        <span class="step-number" aria-hidden="true">03</span>
+        <svg class="icon h-7 w-7 text-secondary" aria-hidden="true"><use href="#i-calendar" /></svg>
+        <h3>Kunci Jadwal</h3>
+        <p>
+          Konfirmasi tanggal dan detail sesi agar jadwal Anda aman tercatat di
+          agenda kami.
+        </p>
+      </li>
+      <li class="step" data-reveal>
+        <span class="step-number" aria-hidden="true">04</span>
+        <svg class="icon h-7 w-7 text-secondary" aria-hidden="true"><use href="#i-image" /></svg>
+        <h3>Sesi &amp; Terima Hasil</h3>
+        <p>
+          Nikmati sesi foto bersama tim kami, lalu terima hasil akhir dalam
+          bentuk file digital.
+        </p>
+      </li>
+    </ol>
+
+    <div class="mt-12 text-center" data-reveal>
+      <a
+        href="<%= wa('Halo DS Studio, saya ingin booking. Jenis acara: ... , Tanggal: ... , Lokasi: ...') %>"
+        class="btn btn-whatsapp btn-lg"
+        target="_blank"
+        rel="noopener"
+        data-wa-cta="booking"
+      >
+        <svg class="icon-fill h-5 w-5" aria-hidden="true"><use href="#i-whatsapp" /></svg>
+        Mulai Booking Sekarang
+      </a>
+      <p class="mt-3 text-sm text-light">
+        WhatsApp <%= site.whatsapp_display %>
+      </p>
+    </div>
+  </div>
+</section>
+<!-- /Cara Booking -->
+
+<!-- FAQ -->
+<section id="faq" class="section" aria-labelledby="faq-title">
+  <div class="container grid gap-10 lg:grid-cols-12 lg:gap-16">
+    <div class="lg:col-span-4" data-reveal>
+      <p class="eyebrow">FAQ</p>
+      <h2 id="faq-title">Pertanyaan yang Sering Ditanyakan</h2>
+      <p class="mt-5">
+        Belum menemukan jawabannya? Tim kami siap membantu langsung lewat
+        WhatsApp.
+      </p>
+      <a
+        href="<%= wa('Halo DS Studio, saya punya pertanyaan:') %>"
+        class="btn btn-outline mt-6"
+        target="_blank"
+        rel="noopener"
+        data-wa-cta="faq"
+      >
+        <svg class="icon-fill h-5 w-5" aria-hidden="true"><use href="#i-whatsapp" /></svg>
+        Tanya via WhatsApp
+      </a>
+    </div>
+
+    <div class="faq-list lg:col-span-8" data-reveal>
+      <details class="faq-item" name="faq" open>
+        <summary>
+          Di mana lokasi DS Studio?
+          <svg class="icon faq-icon" aria-hidden="true"><use href="#i-plus" /></svg>
+        </summary>
+        <div class="faq-body">
+          <p>
+            Studio kami berada di <%= site.address.street %>,
+            <%= site.address.district %>, Kabupaten Sumenep,
+            <%= site.address.region %> <%= site.address.postal_code %>.
+            Petunjuk arah lengkap tersedia di
+            <a href="#kontak">peta lokasi</a> pada halaman ini.
+          </p>
+        </div>
+      </details>
+      <details class="faq-item" name="faq">
+        <summary>
+          Bagaimana cara booking sesi foto?
+          <svg class="icon faq-icon" aria-hidden="true"><use href="#i-plus" /></svg>
+        </summary>
+        <div class="faq-body">
+          <p>
+            Cukup hubungi kami via WhatsApp di
+            <a href="<%= wa() %>" target="_blank" rel="noopener"><%= site.whatsapp_display %></a>.
+            Sampaikan jenis acara, tanggal, dan lokasi. Setelah memilih paket,
+            kami bantu konfirmasi jadwal Anda.
+          </p>
+        </div>
+      </details>
+      <details class="faq-item" name="faq">
+        <summary>
+          Berapa harga paket foto di DS Studio?
+          <svg class="icon faq-icon" aria-hidden="true"><use href="#i-plus" /></svg>
+        </summary>
+        <div class="faq-body">
+          <p>
+            Harga menyesuaikan jenis layanan, durasi, dan kebutuhan acara.
+            Minta pricelist terbaru melalui WhatsApp, kami akan merekomendasikan
+            paket yang paling sesuai dengan anggaran Anda.
+          </p>
+        </div>
+      </details>
+      <details class="faq-item" name="faq">
+        <summary>
+          Apakah bisa foto di luar studio (outdoor)?
+          <svg class="icon faq-icon" aria-hidden="true"><use href="#i-plus" /></svg>
+        </summary>
+        <div class="faq-body">
+          <p>
+            Bisa. Selain di studio, kami melayani sesi outdoor seperti
+            prewedding, wisuda, dan portrait di lokasi pilihan Anda. Lokasi dan
+            konsep bisa didiskusikan bersama saat konsultasi.
+          </p>
+        </div>
+      </details>
+      <details class="faq-item" name="faq">
+        <summary>
+          Apakah melayani acara di luar Kota Sumenep?
+          <svg class="icon faq-icon" aria-hidden="true"><use href="#i-plus" /></svg>
+        </summary>
+        <div class="faq-body">
+          <p>
+            Silakan hubungi kami dengan menyebutkan lokasi dan tanggal acara.
+            Kami akan mengecek ketersediaan tim dan menginformasikan detail
+            layanannya.
+          </p>
+        </div>
+      </details>
+      <details class="faq-item" name="faq">
+        <summary>
+          Apakah hasil foto sudah diedit?
+          <svg class="icon faq-icon" aria-hidden="true"><use href="#i-plus" /></svg>
+        </summary>
+        <div class="faq-body">
+          <p>
+            Ya. Foto melalui proses seleksi dan editing (koreksi warna dan
+            retouch) sebelum diserahkan dalam bentuk file digital. Jumlah foto
+            edit mengikuti paket yang Anda pilih.
+          </p>
+        </div>
+      </details>
+      <details class="faq-item" name="faq">
+        <summary>
+          Apakah bisa sekalian dibuatkan undangan digital?
+          <svg class="icon faq-icon" aria-hidden="true"><use href="#i-plus" /></svg>
+        </summary>
+        <div class="faq-body">
+          <p>
+            Bisa. Kami juga menyediakan undangan pernikahan digital yang dapat
+            memuat galeri foto prewedding, lokasi acara, hitung mundur, musik
+            latar, dan amplop digital.
+          </p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+<!-- /FAQ -->
+
+<!-- Kontak -->
+<section
+  id="kontak"
+  class="section bg-theme-light/60"
+  aria-labelledby="kontak-title"
+>
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Lokasi &amp; Kontak</p>
+      <h2 id="kontak-title">Kunjungi Studio Kami di Sumenep</h2>
+      <p>
+        Datang langsung untuk konsultasi atau sesi foto studio. Sebaiknya
+        hubungi kami terlebih dahulu agar tim dapat menyambut Anda.
+      </p>
+    </div>
+
+    <div class="grid gap-6 lg:grid-cols-5">
+      <div class="contact-card lg:col-span-2" data-reveal>
+        <ul class="contact-list" role="list">
+          <li>
+            <span class="contact-icon" aria-hidden="true"><svg class="icon h-5 w-5"><use href="#i-map-pin" /></svg></span>
+            <div>
+              <h3>Alamat Studio</h3>
+              <address>
+                <%= site.address.street %>, <%= site.address.district %>,
+                Kabupaten Sumenep, <%= site.address.region %>
+                <%= site.address.postal_code %>
+              </address>
+            </div>
+          </li>
+          <li>
+            <span class="contact-icon" aria-hidden="true"><svg class="icon-fill h-5 w-5"><use href="#i-whatsapp" /></svg></span>
+            <div>
+              <h3>WhatsApp</h3>
+              <a href="<%= wa() %>" target="_blank" rel="noopener" data-wa-cta="contact"><%= site.whatsapp_display %></a>
+            </div>
+          </li>
+          <li>
+            <span class="contact-icon" aria-hidden="true"><svg class="icon h-5 w-5"><use href="#i-instagram" /></svg></span>
+            <div>
+              <h3>Instagram</h3>
+              <a href="<%= instagramUrl %>" target="_blank" rel="noopener">@<%= site.instagram %></a>
+            </div>
+          </li>
+          <li>
+            <span class="contact-icon" aria-hidden="true"><svg class="icon h-5 w-5"><use href="#i-mail" /></svg></span>
+            <div>
+              <h3>Email</h3>
+              <a href="mailto:<%= site.email %>"><%= site.email %></a>
+            </div>
+          </li>
+        </ul>
+        <div class="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+          <a
+            href="<%= wa('Halo DS Studio, saya ingin berkunjung ke studio. Kapan waktu yang tepat?') %>"
+            class="btn btn-whatsapp w-full"
+            target="_blank"
+            rel="noopener"
+            data-wa-cta="contact-visit"
+          >
+            <svg class="icon-fill h-5 w-5" aria-hidden="true"><use href="#i-whatsapp" /></svg>
+            Chat Sekarang
+          </a>
+          <a
+            href="<%= site.maps_url %>"
+            class="btn btn-outline w-full"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg class="icon h-5 w-5" aria-hidden="true"><use href="#i-navigation" /></svg>
+            Petunjuk Arah
+          </a>
+        </div>
+      </div>
+
+      <div class="map-frame lg:col-span-3" data-reveal>
+        <iframe
+          src="<%= site.maps_embed %>"
+          title="Peta lokasi DS Studio Fotografi di Jl. Pujangga No.23, Sumenep"
+          width="600"
+          height="450"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /Kontak -->
+
+<!-- CTA -->
+<section class="cta" aria-labelledby="cta-title">
+  <div class="container">
+    <div class="cta-box" data-reveal>
+      <img
+        src="/images/portfolio/prewedding-adat-outdoor-640.webp"
+        srcset="/images/portfolio/prewedding-adat-outdoor-640.webp 640w, /images/portfolio/prewedding-adat-outdoor-1280.webp 1280w"
+        sizes="(min-width: 1024px) 1160px, 100vw"
+        width="640"
+        height="960"
+        loading="lazy"
+        decoding="async"
+        alt=""
+        class="cta-bg"
+      />
+      <div class="cta-content">
+        <h2 id="cta-title">Siap Mengabadikan Momen Spesial Anda?</h2>
+        <p>
+          Jadwal di tanggal favorit cepat terisi. Amankan tanggal Anda
+          sekarang, cukup satu pesan WhatsApp.
+        </p>
+        <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+          <a
+            href="<%= wa('Halo DS Studio, saya ingin cek ketersediaan tanggal untuk sesi foto.') %>"
+            class="btn btn-whatsapp btn-lg"
+            target="_blank"
+            rel="noopener"
+            data-wa-cta="cta"
+          >
+            <svg class="icon-fill h-5 w-5" aria-hidden="true"><use href="#i-whatsapp" /></svg>
+            Cek Jadwal via WhatsApp
+          </a>
+          <a
+            href="<%= instagramUrl %>"
+            class="btn btn-light btn-lg"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg class="icon h-5 w-5" aria-hidden="true"><use href="#i-instagram" /></svg>
+            Follow @<%= site.instagram %>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /CTA -->
+
+<!-- Lightbox -->
+<dialog class="lightbox" aria-label="Tampilan foto portofolio" data-lightbox-dialog>
+  <div class="lightbox-inner">
+    <figure class="lightbox-figure">
+      <img alt="" data-lightbox-img />
+      <figcaption class="lightbox-caption">
+        <span data-lightbox-caption></span>
+        <span class="lightbox-counter" data-lightbox-counter></span>
+      </figcaption>
+    </figure>
+    <button type="button" class="lightbox-btn lightbox-close" aria-label="Tutup" data-lightbox-close>
+      <svg class="icon h-6 w-6" aria-hidden="true"><use href="#i-x" /></svg>
     </button>
-    <button
-      type="button"
-      class="group absolute end-0 top-0 z-30 flex h-full cursor-pointer items-center justify-center px-4 focus:outline-none"
-      data-carousel-next
-    >
-      <span
-        class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/30 group-hover:bg-white/50 group-focus:outline-none group-focus:ring-4 group-focus:ring-white dark:bg-gray-800/30 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70"
-      >
-        <svg
-          class="h-4 w-4 text-white dark:text-gray-800 rtl:rotate-180"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 6 10"
-        >
-          <path
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="m1 9 4-4-4-4"
-          />
-        </svg>
-        <span class="sr-only">Next</span>
-      </span>
-    </button> -->
+    <button type="button" class="lightbox-btn lightbox-prev" aria-label="Foto sebelumnya" data-lightbox-prev>
+      <svg class="icon h-6 w-6" aria-hidden="true"><use href="#i-chevron-left" /></svg>
+    </button>
+    <button type="button" class="lightbox-btn lightbox-next" aria-label="Foto berikutnya" data-lightbox-next>
+      <svg class="icon h-6 w-6" aria-hidden="true"><use href="#i-chevron-right" /></svg>
+    </button>
   </div>
+</dialog>
 
-  <img
-    class="banner-shape absolute -top-28 right-0 -z-[1] w-full max-w-[30%]"
-    src="images/banner-shape.svg"
-    alt=""
-  />
-</section>
-<!-- ./end Banner -->
-
-<!-- Key features -->
-<section class="section key-feature relative">
-  <img
-    class="absolute left-0 top-0 -z-[1] hidden -translate-y-1/2 sm:block"
-    src="images/icons/feature-shape.svg"
-    alt=""
-  />
-  <div class="container">
-    <div class="row justify-between text-center lg:text-start">
-      <div class="lg:col-5">
-        <h2>The Highlighting Part Of Our Solution</h2>
-      </div>
-      <div class="mt-6 lg:col-5 lg:mt-0">
-        <p>
-          Kami mengabadikan momen istimewa dengan keahlian, kreativitas, fokus
-          pada detail, dan teknologi canggih. Temukan mengapa Ds.Studio adalah
-          pilihan terbaik untuk momen berharga Anda.
-        </p>
-      </div>
-    </div>
-    <div
-      class="key-feature-grid mt-10 grid grid-cols-2 gap-7 md:grid-cols-3 xl:grid-cols-4"
-    >
-      <div
-        class="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg transition-all duration-500 hover:scale-105"
-      >
-        <div>
-          <h3 class="h4 text-xl lg:text-2xl">Custom Undangan Digital</h3>
-          <p>
-            Pilih design undangan digital pernikahanmu sesuai yang kamu
-            inginkan.
-          </p>
-        </div>
-        <span class="icon mt-4">
-          <img
-            class="objec-contain"
-            src="images/icons/feature-icon-1.svg"
-            alt=""
-          />
-        </span>
-      </div>
-      <div
-        class="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg transition-all duration-500 hover:scale-105"
-      >
-        <div>
-          <h3 class="h4 text-xl lg:text-2xl">Gallery Photo</h3>
-          <p>
-            Menyediakan galeri foto dan video yang bisa digunakan untuk
-            menampilkan momen-momen pernikahan atau prewed.
-          </p>
-        </div>
-        <span class="icon mt-4">
-          <svg
-            data-v-1650d1c0=""
-            class="objec-contain"
-            viewBox="0 0 16 16"
-            width="1.5rem"
-            height="1.5rem"
-            focusable="false"
-            role="img"
-            aria-label="images"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="#FB84A5"
-            class="bi-images rounded-circle bg-light-magenta p-10px text-web-primary b-icon bi"
-          >
-            <g data-v-1650d1c0="">
-              <path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path>
-              <path
-                d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2zM14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1zM2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1h-10z"
-              ></path>
-            </g>
-          </svg>
-        </span>
-      </div>
-      <div
-        class="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg transition-all duration-500 hover:scale-105"
-      >
-        <div>
-          <h3 class="h4 text-xl lg:text-2xl">Notification Ready</h3>
-          <p>
-            Pengingat otomatis yang bertaut pada Google Calendar, dapat
-            mengingatkan tamu bahwa acaramu akan tiba.
-          </p>
-        </div>
-        <span class="icon mt-4">
-          <img
-            class="objec-contain"
-            src="images/icons/feature-icon-3.svg"
-            alt=""
-          />
-        </span>
-      </div>
-      <div
-        class="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg transition-all duration-500 hover:scale-105"
-      >
-        <div>
-          <h3 class="h4 text-xl lg:text-2xl">Gesture Navigation</h3>
-          <p>
-            Bagikan lokasi dimana acara kamu diselenggarakan agar orang orang
-            dapat melihat lokasinya secara tepat.
-          </p>
-        </div>
-        <span class="icon mt-4">
-          <img
-            class="objec-contain"
-            src="images/icons/feature-icon-4.svg"
-            alt=""
-          />
-        </span>
-      </div>
-      <div
-        class="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg transition-all duration-500 hover:scale-105"
-      >
-        <div>
-          <h3 class="h4 text-xl lg:text-2xl">Amplop Digital</h3>
-          <p>
-            Tamu dapat mengirim amplop atau hadiah lebih mudah dengan amplop
-            digital.
-          </p>
-        </div>
-        <span class="icon mt-4">
-          <svg
-            data-v-1650d1c0=""
-            class="objec-contain"
-            viewBox="0 0 16 16"
-            width="1.5rem"
-            height="1.5rem"
-            focusable="false"
-            role="img"
-            aria-label="credit card2 front"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="#FB84A5"
-            class="bi-credit-card2-front rounded-circle bg-light-magenta p-10px text-web-primary b-icon bi"
-          >
-            <g data-v-1650d1c0="">
-              <path
-                d="M14 3a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h12zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z"
-              ></path>
-              <path
-                d="M2 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5z"
-              ></path>
-            </g>
-          </svg>
-        </span>
-      </div>
-      <div
-        class="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg transition-all duration-500 hover:scale-105"
-      >
-        <div>
-          <h3 class="h4 text-xl lg:text-2xl">Background Music</h3>
-          <p>Pilih musik romantis pilihamu untuk undangan digital kamu.</p>
-        </div>
-        <span class="icon mt-4">
-          <svg
-            data-v-1650d1c0=""
-            viewBox="0 0 16 16"
-            width="1.5rem"
-            height="1.5rem"
-            focusable="false"
-            class="objec-contain"
-            role="img"
-            aria-label="music note list"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="#FB84A5"
-            class="bi-music-note-list rounded-circle bg-light-magenta p-10px text-web-primary b-icon bi"
-          >
-            <g data-v-1650d1c0="">
-              <path
-                d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2z"
-              ></path>
-              <path fill-rule="evenodd" d="M12 3v10h-1V3h1z"></path>
-              <path
-                d="M11 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 16 2.22V4l-5 1V2.82z"
-              ></path>
-              <path
-                fill-rule="evenodd"
-                d="M0 11.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 7H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 3H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z"
-              ></path>
-            </g>
-          </svg>
-        </span>
-      </div>
-      <div
-        class="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg transition-all duration-500 hover:scale-105"
-      >
-        <div>
-          <h3 class="h4 text-xl lg:text-2xl">Location Controls</h3>
-          <p>
-            Memungkinkan pengguna mengelola akses, izin, dan penggunaan data
-            lokasi.
-          </p>
-        </div>
-        <span class="icon mt-4">
-          <img
-            class="objec-contain"
-            src="images/icons/feature-icon-7.svg"
-            alt=""
-          />
-        </span>
-      </div>
-      <div
-        class="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg transition-all duration-500 hover:scale-105"
-      >
-        <div>
-          <h3 class="h4 text-xl lg:text-2xl">Keamanan Data</h3>
-          <p>Datamu akan tersimpan dengan aman bersama kami.</p>
-        </div>
-        <span class="icon mt-4">
-          <img
-            class="objec-contain"
-            src="images/icons/feature-icon-8.svg"
-            alt=""
-          />
-        </span>
-      </div>
-      <div
-        class="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg transition-all duration-500 hover:scale-105"
-      >
-        <div>
-          <h3 class="h4 text-xl lg:text-2xl">Hitungan Mundur</h3>
-          <p>
-            Jangan sampai lewatkan momen indah pernikahanmu, beritahu semua
-            orang hitungan mundur pernikahanmu.
-          </p>
-        </div>
-        <span class="icon mt-4">
-          <svg
-            data-v-1650d1c0=""
-            class="objec-contain"
-            viewBox="0 0 16 16"
-            width="1.5rem"
-            height="1.5rem"
-            focusable="false"
-            role="img"
-            aria-label="clock history"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="#FB84A5"
-            class="bi-clock-history rounded-circle bg-light-magenta p-10px text-web-primary b-icon bi"
-          >
-            <g data-v-1650d1c0="">
-              <path
-                d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022l-.074.997zm2.004.45a7.003 7.003 0 0 0-.985-.299l.219-.976c.383.086.76.2 1.126.342l-.36.933zm1.37.71a7.01 7.01 0 0 0-.439-.27l.493-.87a8.025 8.025 0 0 1 .979.654l-.615.789a6.996 6.996 0 0 0-.418-.302zm1.834 1.79a6.99 6.99 0 0 0-.653-.796l.724-.69c.27.285.52.59.747.91l-.818.576zm.744 1.352a7.08 7.08 0 0 0-.214-.468l.893-.45a7.976 7.976 0 0 1 .45 1.088l-.95.313a7.023 7.023 0 0 0-.179-.483zm.53 2.507a6.991 6.991 0 0 0-.1-1.025l.985-.17c.067.386.106.778.116 1.17l-1 .025zm-.131 1.538c.033-.17.06-.339.081-.51l.993.123a7.957 7.957 0 0 1-.23 1.155l-.964-.267c.046-.165.086-.332.12-.501zm-.952 2.379c.184-.29.346-.594.486-.908l.914.405c-.16.36-.345.706-.555 1.038l-.845-.535zm-.964 1.205c.122-.122.239-.248.35-.378l.758.653a8.073 8.073 0 0 1-.401.432l-.707-.707z"
-              ></path>
-              <path
-                d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0v1z"
-              ></path>
-              <path
-                d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5z"
-              ></path>
-            </g>
-          </svg>
-        </span>
-      </div>
-      <div
-        class="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg transition-all duration-500 hover:scale-105"
-      >
-        <div>
-          <h3 class="h4 text-xl lg:text-2xl">Share Link</h3>
-          <p>
-            Bagikan undangan digitalmu kepada para tamu undangan, kamu juga bisa
-            memberikan nama para tamu.
-          </p>
-        </div>
-        <span class="icon mt-4">
-          <img
-            class="objec-contain"
-            src="images/icons/feature-icon-10.svg"
-            alt=""
-          />
-        </span>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- ./end Key features -->
-
-<!-- Services -->
-<section class="section services">
-  <div class="container">
-    <div class="tab row gx-5 items-center" data-tab-group="integration-tab">
-      <div class="lg:col-7 lg:order-2">
-        <div class="tab-content" data-tab-content>
-          <div class="tab-content-panel active group" data-tab-panel="0">
-            <img
-              class="ml-24 w-[60%] object-contain transition-all duration-300 group-hover:ml-2 group-hover:-rotate-12"
-              src="images/posts/FOTO2.jpg"
-            />
-            <img
-              class="absolute z-[-1] -mt-[36.5rem] ml-24 hidden w-[25.75%] object-contain transition-all duration-300 group-hover:-mt-[40rem] group-hover:ml-72 group-hover:rotate-12 lg:block"
-              src="images/posts/FOTO3.jpg"
-            />
-          </div>
-          <div class="tab-content-panel" data-tab-panel="1">
-            <img
-              class="absolute -mt-8 ml-[22rem] w-[20%] rotate-[40deg] rounded-lg object-contain"
-              src="images/ds-logo.png"
-            />
-            <img
-              class="ml-32 w-[60%] rounded-lg object-contain"
-              src="images/posts/TEAM.jpg"
-            />
-          </div>
-          <div class="tab-content-panel" data-tab-panel="2">
-            <img
-              class="w-full rounded-md object-contain"
-              src="images/posts/FOTO17.jpg"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="mt-6 lg:col-5 lg:order-1 lg:mt-0">
-        <div class="text-container">
-          <h2 class="lg:text-4xl">
-            Biarkan Kami Mengabadikan Momen Spesial Anda
-          </h2>
-          <p class="mt-4">
-            mengundang pelanggan untuk mempercayakan momen-momen berharga mereka
-            kepada Ds.Studio, di mana tim profesional berdedikasi untuk
-            menangkap esensi dan keindahan setiap acara dengan sentuhan seni dan
-            keahlian.
-          </p>
-          <ul class="tab-nav -ml-4 mt-8 border-b-0" data-tab-nav>
-            <li class="tab-nav-item active" data-tab="0">
-              <img class="mr-3" src="images/icons/drop.svg" alt="" />
-              Kreativitas diiringi Perkembangan Teknologi
-            </li>
-            <li class="tab-nav-item" data-tab="1">
-              <img class="mr-3" src="images/icons/brain.svg" alt="" />
-              Profesionalisme dan Keahlian
-            </li>
-            <li class="tab-nav-item" data-tab="2">
-              <img class="mr-3" src="images/icons/timer.svg" alt="" />
-              Komitmen untuk Kenangan Abadi
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="row gx-5 mt-12 items-center lg:mt-0">
-      <div class="lg:col-7">
-        <div class="relative">
-          <img class="ml-24 w-80 object-contain" src="images/posts/FOTO8.jpg" />
-          <img
-            class="absolute bottom-6 left-1/2 -z-[1] -translate-x-1/2"
-            src="images/shape.svg"
-            alt=""
-          />
-        </div>
-      </div>
-      <div class="mt-6 lg:col-5 lg:mt-0">
-        <div class="text-container">
-          <h2 class="lg:text-4xl">
-            Apa yang akan didapatkan bersama Ds.Studio sebagai partner
-            dokumentasi hari bahagiamu?
-          </h2>
-          <p class="mt-4">
-            Dengan Ds.Studio sebagai mitra dokumentasi hari bahagiamu, Anda
-            mendapatkan tim profesional yang mengabadikan momen-momen istimewa
-            dengan keahlian dan kreativitas. Kami menawarkan layanan yang
-            dipersonalisasi dan berkomitmen untuk memberikan hasil yang luar
-            biasa, memastikan kenangan berharga Anda terabadikan dengan elegan
-            dan penuh makna.
-          </p>
-          <ul class="mt-6 text-dark lg:-ml-4">
-            <li class="mb-2 flex items-center rounded px-4">
-              <img
-                class="mr-3"
-                src="images/icons/checkmark-circle.svg"
-                alt=""
-              />
-              Fotografi Berkualitas Tinggi
-            </li>
-            <li class="mb-2 flex items-center rounded px-4">
-              <img
-                class="mr-3"
-                src="images/icons/checkmark-circle.svg"
-                alt=""
-              />
-              Layanan Personalisasi
-            </li>
-            <li class="flex items-center rounded px-4">
-              <img
-                class="mr-3"
-                src="images/icons/checkmark-circle.svg"
-                alt=""
-              />
-              Komitmen untuk Kenangan Abadi
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="row gx-5 mt-12 items-center lg:mt-0">
-      <div class="lg:col-7 lg:order-2">
-        <div class="video pb-5 pr-9">
-          <div class="video-thumbnail overflow-hidden rounded-2xl">
-            <!-- <img
-              class="w-full object-contain"
-              src="images/intro-thumbnail.png"
-              alt=""
-            /> -->
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.0459172056476!2d113.86132867504455!3d-7.003875992997417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd9e54f560a0faf%3A0xe5e362225b9a208b!2sDs.Studio%20Fotografi!5e0!3m2!1sid!2sid!4v1714923114745!5m2!1sid!2sid"
-              width="600"
-              height="450"
-              class="mt-28 object-contain"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-            <!-- <button class="video-play-btn">
-              <img src="images/icons/play-icon.svg" alt="" />
-            </button> -->
-          </div>
-          <div
-            class="video-player absolute left-0 top-0 z-10 hidden h-full w-full"
-          >
-            <!-- <iframe
-              class="h-full w-full"
-              allowfullscreen=""
-              src="https://www.youtube.com/embed/g3-VxLQO7do?autoplay=1"
-            ></iframe> -->
-          </div>
-          <img
-            class="intro-shape absolute bottom-0 right-0 -z-[1]"
-            src="images/shape.svg"
-            alt=""
-          />
-        </div>
-      </div>
-      <div class="mt-6 lg:col-5 lg:order-1 lg:mt-0">
-        <div class="text-container">
-          <h2 class="lg:text-4xl">Lihat dimana kami berada!</h2>
-          <p class="mt-4">
-            Temukan lokasi Ds.Studio di Peta. Gunakan peta untuk mendapatkan
-            petunjuk arah ke studio kami. Hubungi kami untuk informasi lebih
-            lanjut atau jadwal kunjungan. Kami siap membantu mengabadikan momen
-            spesial Anda.
-          </p>
-          <!-- about.html -->
-          <a href="/"
-            ><button class="btn btn-white mt-6">
-              cari tahu kami lebih lanjut!
-            </button></a
-          >
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- ./end Services -->
-
-<!-- Reviews -->
-<section class="reviews">
-  <div class="container">
-    <div class="row justify-between">
-      <div class="lg:col-6">
-        <h2>Our customers have nice things to say about us</h2>
-      </div>
-      <div class="lg:col-4">
-        <p>
-          Pelanggan kami sering memberikan umpan balik positif tentang
-          pengalaman mereka bersama kami.
-        </p>
-      </div>
-    </div>
-    <div class="row mt-10">
-      <div class="col-12">
-        <div class="swiper reviews-carousel">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="review">
-                <div class="review-author-avatar bg-gradient">
-                  <img src="images/users/user-5.png" alt="" />
-                </div>
-                <h4 class="mb-2">Ahda Firly B.</h4>
-                <p class="mb-4 text-[#666]">Lead GDSC</p>
-                <p>MANTAPPP, KERENNN!!!</p>
-                <div
-                  class="review-rating mt-6 flex items-center justify-center space-x-2.5"
-                >
-                  <img src="images/icons/star.svg" alt="" />
-                  <img src="images/icons/star.svg" alt="" />
-                  <img src="images/icons/star.svg" alt="" />
-                  <img src="images/icons/star.svg" alt="" />
-                  <img src="images/icons/star-white.svg" alt="" />
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="review">
-                <div class="review-author-avatar bg-gradient">
-                  <img
-                    src="images/posts/dimas1x1.jpg"
-                    class="rounded-full"
-                    alt=""
-                  />
-                </div>
-                <h4 class="mb-2">Dimas</h4>
-                <p class="mb-4 text-[#666]">CEO Ds.Studio</p>
-                <p>
-                  Our platform helps build secure onboarding authentica
-                  experiences & engage your users. We build .
-                </p>
-                <div
-                  class="review-rating mt-6 flex items-center justify-center space-x-2.5"
-                >
-                  <img src="images/icons/star.svg" alt="" />
-                  <img src="images/icons/star.svg" alt="" />
-                  <img src="images/icons/star.svg" alt="" />
-                  <img src="images/icons/star.svg" alt="" />
-                  <img src="images/icons/star.svg" alt="" />
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="review">
-                <div class="review-author-avatar bg-gradient">
-                  <img src="images/users/user-6.png" alt="" />
-                </div>
-                <h4 class="mb-2">Testes</h4>
-                <p class="mb-4 text-[#666]">Web Dev</p>
-                <p>Great job for Ds.Studio, elegant consept</p>
-                <div
-                  class="review-rating mt-6 flex items-center justify-center space-x-2.5"
-                >
-                  <img src="images/icons/star.svg" alt="" />
-                  <img src="images/icons/star.svg" alt="" />
-                  <img src="images/icons/star.svg" alt="" />
-                  <img src="images/icons/star.svg" alt="" />
-                  <img src="images/icons/star-white.svg" alt="" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- If we need pagination -->
-          <div
-            class="swiper-pagination reviews-carousel-pagination !bottom-0"
-          ></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Reviews -->
-
-<!-- Call To action -->
-<section class="px-5 py-20 xl:py-[120px]">
-  <div class="container">
-    <div
-      class="bg-gradient row justify-center rounded-b-[80px] rounded-t-[20px] px-[30px] pb-[75px] pt-16"
-    >
-      <div class="lg:col-11">
-        <div class="row">
-          <div class="lg:col-7">
-            <h2 class="h1 text-white">
-              Fotografi yang Menghidupkan Cerita Anda
-            </h2>
-            <a class="btn btn-white mt-8" href="#">Hubungi Kami Sekarang!</a>
-          </div>
-          <div class="mt-8 lg:col-5 lg:mt-0">
-            <p class="text-white">
-              Percayakan momen spesial Anda kepada Ds.Studio! Dengan tim
-              profesional kami, fotografi dan videografi yang dipersonalisasi,
-              serta komitmen untuk keindahan dan detail, kami akan membantu Anda
-              mengabadikan kenangan berharga. Jadikan acara Anda abadi dengan
-              layanan kami!
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- FAQ structured data -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Di mana lokasi DS Studio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Studio kami berada di <%= site.address.street %>, <%= site.address.district %>, Kabupaten Sumenep, <%= site.address.region %> <%= site.address.postal_code %>."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bagaimana cara booking sesi foto?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hubungi kami via WhatsApp di <%= site.whatsapp_display %>. Sampaikan jenis acara, tanggal, dan lokasi. Setelah memilih paket, kami bantu konfirmasi jadwal Anda."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Berapa harga paket foto di DS Studio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Harga menyesuaikan jenis layanan, durasi, dan kebutuhan acara. Minta pricelist terbaru melalui WhatsApp, kami akan merekomendasikan paket yang paling sesuai dengan anggaran Anda."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah bisa foto di luar studio (outdoor)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bisa. Selain di studio, kami melayani sesi outdoor seperti prewedding, wisuda, dan portrait di lokasi pilihan Anda."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah melayani acara di luar Kota Sumenep?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Silakan hubungi kami dengan menyebutkan lokasi dan tanggal acara. Kami akan mengecek ketersediaan tim dan menginformasikan detail layanannya."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah hasil foto sudah diedit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ya. Foto melalui proses seleksi dan editing (koreksi warna dan retouch) sebelum diserahkan dalam bentuk file digital. Jumlah foto edit mengikuti paket yang dipilih."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah bisa sekalian dibuatkan undangan digital?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bisa. Kami juga menyediakan undangan pernikahan digital yang dapat memuat galeri foto prewedding, lokasi acara, hitung mundur, musik latar, dan amplop digital."
+        }
+      }
+    ]
+  }
+</script>

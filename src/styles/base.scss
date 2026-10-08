@@ -1,9 +1,21 @@
 html {
-  @apply text-base overflow-x-hidden;
+  @apply text-base;
+  scroll-padding-top: 88px;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
+
+  &:has(dialog[open]) {
+    overflow: hidden;
+  }
 }
 
 body {
-  @apply bg-body bg-[url('/images/body-bg.svg')] bg-cover bg-no-repeat font-primary font-normal leading-relaxed text-text overflow-x-hidden;
+  @apply bg-body font-primary font-normal leading-relaxed text-text antialiased;
+  overflow-x: clip;
 }
 
 h1,
@@ -12,35 +24,46 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-secondary font-bold leading-tight text-dark;
-}
-
-h1,
-.h1 {
-  @apply text-h1-sm md:text-h1;
+  @apply font-secondary font-semibold leading-tight text-dark;
+  text-wrap: balance;
 }
 
 h2,
 .h2 {
-  @apply text-h2-sm md:text-h2;
+  font-size: clamp(2.125rem, 1.55rem + 2.4vw, 3.25rem);
+  line-height: 1.08;
 }
 
 h3,
 .h3 {
-  @apply text-h3-sm md:text-h3;
+  @apply text-2xl;
 }
 
-h4,
-.h4 {
-  @apply text-h4;
+p {
+  text-wrap: pretty;
 }
 
-h5,
-.h5 {
-  @apply text-h5;
+img,
+svg,
+video,
+iframe {
+  @apply max-w-full;
 }
 
-h6,
-.h6 {
-  @apply text-h6;
+img {
+  @apply h-auto;
+}
+
+a,
+button,
+summary {
+  @apply transition-colors duration-200;
+}
+
+:focus-visible {
+  @apply rounded-sm outline outline-2 outline-offset-4 outline-primary;
+}
+
+::selection {
+  @apply bg-secondary/40 text-dark;
 }

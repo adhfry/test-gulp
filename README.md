@@ -1,70 +1,67 @@
-<h1 align="center">Pinwheel Tailwind</h1>
+# DS Studio – Landing Page
 
-<p align="center">Pinwheel is a highly customizable multipurpose SaaS theme built with TailwindCSS.</p>
+Website resmi **DS Studio Fotografi**, studio foto & videografi di Sumenep, Madura.
+Single-page landing (HTML + Tailwind CSS + vanilla JS) yang dibangun dengan Gulp.
 
-<h2 align="center">
-<a target="_blank" href="https://demo.themefisher.com/pinwheel-tailwind/" rel="nofollow">👀 Demo</a> | <a  target="_blank" href="">Page Speed (95+)🚀</a>
-</h2>
+- WhatsApp: [+62 823-3852-4669](https://wa.me/6282338524669)
+- Instagram: [@ds.studio_126](https://www.instagram.com/ds.studio_126/)
 
-![pinwheel](https://demo.themefisher.com/thumbnails/pinwheel.png)
+## Perintah
 
-## 📌Key Features
-
-- 🔢 95+ Google Page Speed score
-- 🎨 Easy to customize
-- 🌐 Made with HTML5 and Tailwind CSS v3.0
-- 📦 Modular JS & CSS Code
-- ⚙️ Netlify & Vercel setting pre-configured
-- ❌ No jQuery. Only Vanilla JavaScript
-- 📂 Clean folder structure
-- ✨ Clean code
-- 🛠️ Simple and easy development environment setup
-- 🌐 Compatible with all modern browsers
-- 🆓 Free Google fonts
-- 🔆 Font Awesome icons
-- 🔍 SEO friendly
-
-
-
-## 🚀 Getting Started
-
-### 📦 Dependency
-
-- node v18+
-- npm v9.5+
-- gulp v4+
-
-### 👉 Package Installation
-
-```
+```bash
 npm install
+npm run dev     # dev server + live reload (http://localhost:3000)
+npm run build   # build produksi ke folder ./theme
+npm run release # deploy production ke Vercel + arahkan alias ds-studio.vercel.app
 ```
 
-### 👉 Development Command
+## Hosting
 
-```
-npm run dev
-```
+Live di **https://ds-studio.vercel.app** (project Vercel `ds-studio`).
 
-### 👉 Build Command
+- `ds-studio.vercel.app` adalah alias manual, jadi deploy production **wajib** lewat
+  `npm run release` (deploy + pindahkan alias). `vercel --prod` saja hanya memperbarui
+  `ds-studio-one.vercel.app`.
+- Env `SITE_URL=https://ds-studio.vercel.app` sudah diset di Vercel (Production) agar
+  canonical, Open Graph, dan sitemap memakai domain yang benar.
 
-```
-npm run build
-```
+## Konfigurasi penting
 
-<!-- reporting issue -->
+Semua data bisnis ada di `src/theme.json` → `site`
+(nama, nomor WhatsApp, Instagram, email, alamat, koordinat, link & embed Google Maps).
+Ubah di sana, semua halaman, meta SEO, JSON-LD, sitemap, dan tombol WhatsApp ikut berubah.
 
-## 🐞 Reporting Issues
+**URL domain (wajib benar untuk canonical, Open Graph & sitemap)** dipilih otomatis saat build:
 
-We use GitHub Issues as the official bug tracker for this Template. Please Search [existing issues](https://github.com/themefisher/pinwheel-tailwind/issues). It’s possible someone has already reported the same problem.
-If your problem or idea has not been addressed yet, feel free to [open a new issue](https://github.com/themefisher/pinwheel-tailwind/issues).
+1. env `SITE_URL` (contoh `SITE_URL=https://dsstudio.id`)
+2. domain produksi Vercel (`VERCEL_PROJECT_PRODUCTION_URL`)
+3. `URL` dari Netlify
+4. fallback `site.url` di `src/theme.json`
 
-<!-- licence -->
+## Struktur
 
-## 📝 License
+| Path | Isi |
+| --- | --- |
+| `src/pages/index.html` | Landing page (hero, layanan, portofolio, tentang, cara booking, FAQ, lokasi, CTA) |
+| `src/pages/404.html` | Halaman 404 |
+| `src/partials/` | `head.html` (SEO, OG, JSON-LD), `header.html`, `footer.html`, ikon SVG, grid portofolio |
+| `src/seo/` | `robots.txt`, `sitemap.xml` (dengan image sitemap), `site.webmanifest` |
+| `src/styles/` | Tailwind + SCSS (`main.scss` sebagai entry) |
+| `src/scripts/main.js` | Menu mobile, scroll-spy, filter portofolio, lightbox, animasi reveal |
+| `src/public/images/portfolio/` | Foto portofolio WebP (640w & 1280w) |
+| `src/public/images/og-image.jpg` | Gambar preview share (1200×630) |
 
-Copyright (c) 2023 - Present, Designed & Developed by [Themefisher](https://themefisher.com/)
+Halaman lain di `src/pages/` adalah sisa template dan **tidak ikut di-build**.
 
-**Code License:** Released under the [MIT](https://github.com./themefisher/pinwheel-tailwind/blob/main/LICENSE) license.
+## Menambah foto portofolio
 
-**Image license:** The images are only for demonstration purposes. They have their license, we don't have permission to share those images.
+1. Simpan foto sebagai WebP 640px dan 1280px (lebar) di `src/public/images/portfolio/`
+   dengan nama `kategori-deskripsi-640.webp` dan `kategori-deskripsi-1280.webp`.
+2. Tambahkan item baru di `src/partials/sections/gallery.html`
+   (`data-category`: `wedding`, `prewedding`, `maternity`, `wisuda`, `portrait`, `studio`, `event`).
+3. Tambahkan juga ke `src/seo/sitemap.xml` agar terindeks Google Images.
+
+## Tracking
+
+Setiap tombol WhatsApp punya atribut `data-wa-cta`. Jika GA4 (`gtag`) atau Meta Pixel (`fbq`)
+dipasang, klik otomatis dikirim sebagai event `whatsapp_click` / `Contact`.

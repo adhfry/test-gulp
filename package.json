@@ -1,7 +1,7 @@
 {
   "name": "ds.studio",
   "version": "1.0.0",
-  "description": "Ds.Studio is a wedding studio that brings creative and innovative expertise to capture your special moments with an elegant and beautiful touch.",
+  "description": "Website resmi DS Studio, studio foto & videografi di Sumenep, Madura: wedding, prewedding, wisuda, maternity, portrait, dan event.",
   "author": "Adhfry",
   "license": "MIT",
   "scripts": {
@@ -9,6 +9,7 @@
     "build": "gulp build",
     "deploy": "gulp deploy",
     "format": "prettier -w ./src",
+    "release": "node scripts/vercel-release.js",
     "remove-darkmode": "node scripts/removeDarkMode.js && yarn format"
   },
   "devDependencies": {
