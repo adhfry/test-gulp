@@ -65,6 +65,8 @@ const templateData = {
   instagramUrl: "https://www.instagram.com/" + site.instagram + "/",
   year: new Date().getFullYear(),
   buildDate: new Date().toISOString().slice(0, 10),
+  // cache-busting query for css/js, changes on every build
+  assetVersion: Date.now().toString(36),
 };
 
 const pageData = () =>
