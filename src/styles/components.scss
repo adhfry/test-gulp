@@ -76,10 +76,11 @@
 
 // hero
 .hero {
-  @apply relative pb-16 pt-10 lg:pb-24 lg:pt-14;
+  // overflow hidden keeps the decorative blob from widening the mobile layout viewport
+  @apply relative isolate overflow-hidden pb-16 pt-10 lg:pb-24 lg:pt-14;
 
   &::before {
-    @apply pointer-events-none absolute -right-40 -top-40 -z-10 h-[520px] w-[520px] rounded-full bg-secondary/30 blur-3xl content-[''];
+    @apply pointer-events-none absolute -right-40 -top-40 -z-10 h-[520px] w-[520px] max-w-[100vw] rounded-full bg-secondary/30 blur-3xl content-[''];
   }
 }
 

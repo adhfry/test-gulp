@@ -1,5 +1,6 @@
 html {
   @apply text-base;
+  overflow-x: clip;
   scroll-padding-top: 88px;
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
